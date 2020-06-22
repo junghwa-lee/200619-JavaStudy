@@ -14,7 +14,7 @@
  *    			문자열은 비교할 수 없다
  *              "Hello" == "Hello" ===> equals()
  *              ==> 문자열을 저장하는 데이터형 => String
- *              char c='Hello' (x) 
+ *              char c='Hello' (x)  char은 한글자만 가능
  *              String s="Hello" (o)
  *      1) 종류
  *          == 같다            => 10==20 (false)
