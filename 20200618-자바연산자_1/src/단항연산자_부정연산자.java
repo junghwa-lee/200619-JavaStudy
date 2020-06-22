@@ -1,6 +1,6 @@
 /*
  *     부정연산자  : !
- *      => true -> false , false -> true
+ *      => boolean일 경우만 사용 ==> true -> false , false -> true
  *      => 결과값 : boolean
  *      
  *         단항 : 
