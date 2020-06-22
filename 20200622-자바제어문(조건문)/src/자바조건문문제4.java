@@ -10,6 +10,7 @@ import java.util.Scanner;
 import java.util.*;
 public class 자바조건문문제4 {
 
+	// 4. 정수 a,b 입력받아 max, min 출력
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		/*
