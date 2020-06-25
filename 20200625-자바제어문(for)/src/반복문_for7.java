@@ -22,6 +22,7 @@ public class 반복문_for7 {
 		int com=(int)(Math.random()*100)+1; //1~100사이 난수 발생
 		Scanner scan=new Scanner(System.in);
 		int count=0;
+	
 		
 		for(;;) // 무한루프 => while(true)
 		{
@@ -56,8 +57,17 @@ public class 반복문_for7 {
 		}
 		
 		System.out.println("프로그램 종료");
-		
-		
 	}
-
 }
+
+
+/*    
+ *    break문 
+ *       => 더이상 반복 없이 즉시 종료 (주로 무한루프를 제어하는데 사용)
+ *    continue문
+ *       => 반복을 끝내지 않고, continue 아래의 문장을 수행하지 않고 다음 반복으로 넘어감
+ *     
+ *    --> for, while, switch 모두 사용
+ */
+
+
