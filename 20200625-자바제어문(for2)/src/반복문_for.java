@@ -17,11 +17,12 @@ public class 반복문_for {
 			System.out.println("Java=>For"); // 블록x => 윗문장만 반복
 			
 			
-		//char c='a';
+		char c='a';
 		for(char ch='A';ch<='Z';ch++)
 		{
-			//System.out.print(ch+""+c++);
-			System.out.print(ch+""+(char)(ch+32));
+			System.out.print(ch+""+c++); // 기본형타입 -> 문자열 변환 (page 35) 
+			c++;
+			//System.out.print(ch+""+(char)(ch+32));
 		}
 			System.out.println();
 			
