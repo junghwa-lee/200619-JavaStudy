@@ -1,6 +1,7 @@
 import java.util.*;
 public class 야구게임_메소드 {
 
+	//1. 중복없는 난수 ==> 3개
 		static int[] getRand()
 		{
 			int[] com=new int[3];
@@ -31,6 +32,8 @@ public class 야구게임_메소드 {
 			return com;
 		}
 		
+		
+	// 2. 사용자 입력
 		static int[] userInput()
 		{
 			int[] user=new int[3];
@@ -80,9 +83,9 @@ public class 야구게임_메소드 {
 			{
 				for(int j=0;j<3;j++)
 				{
-					if(com[i]==user[j])
+					if(com[i]==user[j]) //숫자 일치??
 					{
-						if(i==j)
+						if(i==j) //자리 일치??
 							s++;
 						else
 							b++;
@@ -94,6 +97,7 @@ public class 야구게임_메소드 {
 		// 힌트
 			System.out.printf("Input Number:%d%d%d,Result:%dS-%dB\n", user[0],user[1],user[2],s,b);
 			
+			
 			if(isEnd(s))
 			{
 				System.out.println("Game Over!!");
@@ -102,17 +106,30 @@ public class 야구게임_메소드 {
 			}
 		
 		}
-		static boolean isEnd(int s)
-		{
-			if(s==3)
+		 
+			static boolean isEnd(int s)
 			{
-				return true;
+				if(s==3)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
 			}
-			else
+		
+			
+		/*
+		 	if(s==3)
 			{
-				return false;
+				System.out.println("Game Over!!");
+				System.exit(0);
 			}
-		}
+		
+		}	
+		 */
+		
 		
 		static void process()
 		{
