@@ -13,12 +13,7 @@ public class Movie {
  * 
  * }
  */
-
-public class music{
-	int rank;
-	String state;
-	String poster;
-	String song;
-	String singer;
-	String album;
-}
+/*
+ * public class music{ int rank; String state; String poster; String song;
+ * String singer; String album; }
+ */
