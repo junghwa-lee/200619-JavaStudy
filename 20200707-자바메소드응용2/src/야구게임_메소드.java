@@ -111,6 +111,10 @@ public class 야구게임_메소드 {
 			{
 				if(s==3)
 				{
+					/*
+					 * System.out.print("게임을 다시할까요(y/n)?"); Scanner scan=new Scanner(System.in);
+					 * String ss=scan.next(); if(ss.equals("y")) { process(); }
+					 */
 					return true;
 				}
 				else
