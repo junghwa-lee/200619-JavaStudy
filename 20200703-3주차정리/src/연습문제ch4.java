@@ -26,7 +26,7 @@ public class 연습문제ch4 {
 				
 				sum=0;
 				
-				int i=1;
+				int i=0;
 				while(true)
 				{
 					
