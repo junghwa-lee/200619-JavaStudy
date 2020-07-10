@@ -127,20 +127,24 @@ public class MainClass {
 	}// 생성자 사용x => 괄호 안에서 구현 가능(초기값) => 초기화 블럭
 	*/
 	
-	String book="Java의 정석"; // 저장x
-	String author="남궁성"; // 저장x -> new 필요
-	static String publisher="도우출판"; //저장o
+	String book="Java의 정석"; // 인스턴스 변수 => 저장x -> new 필요
+	String author="남궁성"; // 인스턴스변수 => 저장x -> new 필요
+	static String publisher="도우출판"; //클래스변수 => 저장o
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		MainClass m=new MainClass(); //'m'안에 book, author 저장 ==> m.book ,m.author
+		// 인스턴스변수(멤버변수) => 객체생성 후 사용
+		MainClass m=new MainClass(); // [객체생성] 'm'안에 book, author 저장 ==> m.book ,m.author
 		System.out.println("책이름:"+m.book);
 		System.out.println("저자:"+m.author);
-		System.out.println("출판사:"+m.publisher);
+		
+		// 클래스변수(공유변수) => 객체생성 없이 바로사용 (클래스이름.클래스변수)
 		System.out.println("출판사:"+MainClass.publisher); // 권장
+		System.out.println("출판사:"+m.publisher);
 		System.out.println("출판사:"+publisher);
 		/*
-		 *  static => 객체를 통해서 접근 가능 m.publisher
-		 *  	   => 클래스 명을 통해 접근 가능 MainClass.publisher
+		 *  static => 클래스 명을 통해 접근 가능 MainClass.publisher
+		 *  	   => 객체를 통해서 접근 가능 m.publisher
 		 *  	   => '같은 클래스'에 있는 경우에는 publisher
 		 *             class A
 		 *             {
