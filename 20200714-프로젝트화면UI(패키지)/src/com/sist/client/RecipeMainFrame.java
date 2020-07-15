@@ -13,12 +13,14 @@ import javax.swing.*;
  *  
  *  
  */
+import com.sist.common.*;
 public class RecipeMainFrame extends JFrame implements ActionListener{
 	//JFrame f=new JFrame(); 포함클래스 
 	//배치
 	CardLayout card=new CardLayout();
 	Login login=new Login();
 	JoinForm join=new JoinForm();
+	RecipeManager rm=new RecipeManager();
 	public RecipeMainFrame()
 	{
 		
@@ -26,8 +28,11 @@ public class RecipeMainFrame extends JFrame implements ActionListener{
 		//Layout => 화면배치
 		setLayout(card);
 		//화면 추가
-		add("LOGIN",login);
+		add("RM",rm);
 		add("JOIN",join);
+		add("LOGIN",login);
+	
+		
 		setSize(1024, 960);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE); //닫기버튼 누르면 메모리 삭제 
