@@ -18,6 +18,7 @@ public class ClientMainFrame extends JFrame implements ActionListener{
 	MenuForm mf=new MenuForm();
 	ChatForm cf=new ChatForm();
 	ControlPanel cp=new ControlPanel();
+	
 	public ClientMainFrame()
 	{
 		/*
