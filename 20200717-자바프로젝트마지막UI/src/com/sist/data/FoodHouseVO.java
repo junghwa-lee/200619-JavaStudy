@@ -15,6 +15,7 @@ public class FoodHouseVO {
 	private int no; // 카테 안 각 맛집의 번호
 	private int cno; // 맛집이 속한 카테 번호
 	private String poster; // split
+	private String review;
 	private String title;
 	private double score;
 	private String address;
@@ -111,6 +112,12 @@ public class FoodHouseVO {
 	}
 	public void setBad(int bad) {
 		this.bad = bad;
+	}
+	public String getReview() {
+		return review;
+	}
+	public void setReview(String review) {
+		this.review = review;
 	}
 	
 }

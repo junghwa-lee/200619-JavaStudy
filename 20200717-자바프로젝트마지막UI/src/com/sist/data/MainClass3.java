@@ -20,7 +20,52 @@ import org.jsoup.select.Elements;
                       <p class="desc">"최애 디저트는 당근 티라미수 아니겠어?"</p>
  */
 public class MainClass3 {
-
+	public static FoodHouseVO[] categoryFoodData()
+	{
+		FoodHouseVO[] food=new FoodHouseVO[10];
+		try
+		{
+			Document doc=Jsoup.connect("https://www.mangoplate.com/top_lists/1965_hotel_bingsu").get();
+			Elements title=doc.select("span.title h3");
+			Elements score=doc.select("strong.point span");
+			Elements address=doc.select("p.etc");
+			Elements poster=doc.select("img.center-croping");
+			Elements review=doc.select("p.short_review");
+			for(int i=0;i<10;i++)
+			{
+				System.out.println(title.get(i).text());
+				System.out.println(score.get(i).text());
+				System.out.println(address.get(i).text());
+				System.out.println(poster.get(i).attr("data-original"));
+				System.out.println(review.get(i).text());
+				System.out.println("=================================");
+				food[i]=new FoodHouseVO();
+				food[i].setTitle(title.get(i).text());
+				food[i].setScore(Double.parseDouble(score.get(i).text())); 
+				food[i].setAddress(address.get(i).text());
+				food[i].setPoster(poster.get(i).attr("data-original"));
+				food[i].setReview(review.get(i).text());
+				/*
+				Wrapper Class
+				문자열 -> 실수 Double.parseDouble()
+				문자열 -> 정수 Integer.parseInt()
+				문자열 -> 논리 Boolean.parseBoolean()
+				*/
+				/*
+			  	<p>aaaaaa</p> => text()
+			    <p data="aaaaaa"/> => attr("data")
+				*/
+			
+			}
+		
+		}catch(Exception ex)
+		{
+			ex.printStackTrace(); //에러 위치 확인
+		}
+		return food;
+	}
+	
+	
 	public static CategoryVO[] categoryListData()
 	{
 		CategoryVO[] cate=new CategoryVO[10];
@@ -29,7 +74,7 @@ public class MainClass3 {
 			Document doc=Jsoup.connect("https://www.mangoplate.com/").get();
 			//System.out.println(doc);
 			
-			//Elements : <li> 여러개 가져옴
+			//Elements : 태그 <li> 여러개 가져옴
 			Elements title=doc.select("div.info_inner_wrap span.title"); 
 			Elements subject=doc.select("div.info_inner_wrap p.desc");
 			Elements poster=doc.select("ul.list-toplist-slider img.center-croping");
@@ -65,46 +110,7 @@ public class MainClass3 {
 		// TODO Auto-generated method stub
 		// URL ==> https://www.mangoplate.com/ 
 		// 사이트주소, 데이터가져올때 => 예외처리  ===> CheckException
-		try
-		{
-			Document doc=Jsoup.connect("https://www.mangoplate.com/").get();
-			//System.out.println(doc);
-			
-			//Elements : <li> 여러개 가져옴
-			Elements title=doc.select("div.info_inner_wrap span.title"); 
-			Elements subject=doc.select("div.info_inner_wrap p.desc");
-			Elements poster=doc.select("ul.list-toplist-slider img.center-croping");
-			//Elements link=doc.select("");
-			/*
-			 *  <p>aaa</p> ==> p.text()
-			 *  <p src=""> ==> p.attr()
-			 */
-			
-			for(int i=0;i<10;i++)
-			{
-				System.out.println("================================");
-				System.out.println(title.get(i).text());
-				System.out.println(subject.get(i).text());
-				System.out.println(poster.get(i).attr("data-lazy"));
-				/*
-				try
-				{
-					String temp=(i+1)+"|"+title.get(i).text()+"|"
-										+subject.get(i).text()+"|"
-										+poster.get(i).attr("data-lazy")+"\r\n";
-					FileWriter fw=new FileWriter("c:\\javaDev\\category.txt",true);
-					fw.write(temp);
-					fw.close();
-				}catch(Exception ex) {
-					ex.printStackTrace();
-				} 
-				=> javadev에 데이터 파일 저장 
-				*/
-			}
-		}catch(Exception ex)
-		{
-			ex.printStackTrace(); // 에러시에 어디서 오류 확인
-		}
+		categoryFoodData();
 	
 	}
 

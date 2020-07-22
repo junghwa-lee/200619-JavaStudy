@@ -58,8 +58,14 @@ public class ClientMainFrame extends JFrame implements ActionListener{
 		// 생성자는 호출시에 반드시 ==> new 생성자()
 		UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel"); // +build path
 		new ClientMainFrame();
-		
 	}
+	
+	public static Image getImage(ImageIcon ii,int w,int h)
+    {
+    	Image dimg = ii.getImage().getScaledInstance(w, h,
+    	        Image.SCALE_SMOOTH);
+    	return dimg;
+    }
 
 	@Override
 	public void actionPerformed(ActionEvent e) {    // 메뉴바 버튼처리
