@@ -65,7 +65,7 @@ public class ClientMainFrame extends JFrame implements ActionListener{
     	Image dimg = ii.getImage().getScaledInstance(w, h,
     	        Image.SCALE_SMOOTH);
     	return dimg;
-    }
+    } // 지정한크기에 맞춘다
 
 	@Override
 	public void actionPerformed(ActionEvent e) {    // 메뉴바 버튼처리
