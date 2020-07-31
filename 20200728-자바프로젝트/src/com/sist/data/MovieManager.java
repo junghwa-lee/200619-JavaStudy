@@ -162,6 +162,7 @@ public class MovieManager {
 		
 		for(MovieVO vo:list){
 			System.out.println(vo.getTitle());
+			System.out.println(vo.getGrade());
 		}
 		/*
 		 * for(MovieVO vo:list) { System.out.println(vo.getTitle(ss)); {
